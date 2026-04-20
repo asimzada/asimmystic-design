@@ -1,3 +1,12 @@
+/* =========================================
+   FILE: main.css
+   TYPE: Global Base Styles
+   PURPOSE: Core theme foundation for AsimMystic UI
+   AUTHOR: AsimMystic Design System
+   VERSION: 1.0
+========================================= */
+
+/* Global Reset & Base Styling */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -5,7 +14,7 @@ body {
   color: white;
 }
 
-/* Global smooth behavior */
+/* Smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
 }

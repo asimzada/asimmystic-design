@@ -1,1 +1,12 @@
+/* =========================================
+   FILE: responsive.css
+   TYPE: Mobile / Responsive Design Layer
+   PURPOSE: Ensure mobile-first UI behavior
+========================================= */
 
+@media (max-width: 768px) {
+  .glass-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,1 +1,30 @@
+/* =========================================
+   FILE: header.css
+   TYPE: UI Component (Header / Navigation)
+   PURPOSE: Glassmorphism header + navigation styling
+   DEPENDS ON: main.css
+========================================= */
 
+.glass-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(14px);
+  background: rgba(10, 10, 10, 0.6);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  z-index: 999;
+}
+
+.glass-header a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.glass-header a:hover {
+  color: #00f7ff;
+  text-shadow: 0 0 12px #00f7ff;
+}
