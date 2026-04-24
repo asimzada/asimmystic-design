@@ -21,6 +21,16 @@ body {
   background: #f5f7fb;
   color: #111;
 }
+.Header,
+header,
+#header,
+.blogger-header,
+.footer,
+#footer,
+.sidebar,
+.widget {
+  display: none !important;
+}
 
 /* REMOVE ANY DOUBLE LAYOUT ISSUE */
 .feed-container {
