@@ -1,31 +1,35 @@
-// SCROLL ANIMATION
-const elements = document.querySelectorAll(".fade-in");
 
-window.addEventListener("scroll", () => {
-  elements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
-    }
+// 💥 PAGE CLICK FADE TRANSITION (SPA FEEL)
+document.querySelectorAll(".nav-link").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    document.body.style.opacity = "0.2";
+
+    setTimeout(() => {
+      document.body.style.opacity = "1";
+    }, 250);
   });
 });
 
-// RIPPLE EFFECT
-document.querySelectorAll(".clickable").forEach(el => {
-  el.addEventListener("click", function (e) {
 
-    const ripple = document.createElement("span");
-    ripple.classList.add("ripple");
+// ⚡ CARD MICRO INTERACTION BOOST
+document.querySelectorAll(".card").forEach(card => {
 
-    const rect = this.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-
-    ripple.style.width = ripple.style.height = size + "px";
-    ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
-    ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
-
-    this.appendChild(ripple);
-
-    setTimeout(() => ripple.remove(), 600);
+  card.addEventListener("mouseenter", () => {
+    card.style.filter = "brightness(1.05)";
   });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.filter = "brightness(1)";
+  });
+
+  // 💥 CLICK POP EFFECT
+  card.addEventListener("click", () => {
+    card.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      card.style.transform = "scale(1.05)";
+    }, 120);
+  });
+
 });

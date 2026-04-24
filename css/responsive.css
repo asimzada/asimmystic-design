@@ -1,22 +1,11 @@
 @media (max-width: 768px) {
 
-  .menu-btn {
-    display: block;
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 
-  .nav-menu ul {
-    position: absolute;
-    right: 0;
-    top: 70px;
-    background: #111;
-    flex-direction: column;
-    width: 200px;
-    display: none;
-    padding: 10px;
-  }
-
-  .nav-menu ul.active {
-    display: flex;
+  .nav {
+    flex-wrap: wrap;
   }
 
 }

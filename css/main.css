@@ -1,126 +1,43 @@
-/* GLOBAL */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: Arial;
 }
 
 body {
-  background: radial-gradient(circle at top, #0a0f1f, #05070d);
-  color: white;
-  overflow-x: hidden;
+  background: #f5f7fb;
+  color: #111;
 }
 
-/* APP */
-.app {
-  min-height: 100vh;
+/* REMOVE ANY DOUBLE LAYOUT ISSUE */
+.feed-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
 
-/* GLASS NAVBAR */
-.glass-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 14px 0;
-  backdrop-filter: blur(18px);
-  background: rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  z-index: 1000;
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
-
-.nav-inner {
-  width: 92%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* BRAND */
-.logo {
-  font-size: 20px;
-  font-weight: 600;
-  color: #00f7ff;
-  text-shadow: 0 0 12px #00f7ff;
-}
-
-.tagline {
-  font-size: 11px;
-  opacity: 0.6;
-}
-
-/* NAV LINKS */
-.nav-links {
-  display: flex;
-  gap: 18px;
-}
-
-.nav-item {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
+.hero {
+  height: 320px;
+  background: url('https://picsum.photos/1600/600') center/cover;
+  margin-top: 60px;
   position: relative;
-  transition: 0.3s;
 }
 
-.nav-item:hover {
-  color: #00f7ff;
-}
-
-/* underline animation */
-.nav-item::after {
-  content: "";
+.hero-overlay {
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #00f7ff;
-  transition: 0.3s;
-}
+  inset: 0;
+  background: rgba(0,0,0,0.5);
 
-.nav-item:hover::after {
-  width: 100%;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-/* MOBILE */
-.menu-btn {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-/* PAGE */
-.page {
-  padding-top: 90px;
-  animation: fadePage 0.5s ease;
-}
-
-@keyframes fadePage {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* MOBILE */
-@media(max-width:768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    flex-direction: column;
-    background: rgba(0,0,0,0.6);
-    padding: 15px;
-    border-radius: 12px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-btn {
-    display: block;
-    color: white;
-  }
+  color: white;
+  text-align: center;
 }
