@@ -1,35 +1,47 @@
+document.addEventListener("DOMContentLoaded", () => {
 
-// 💥 PAGE CLICK FADE TRANSITION (SPA FEEL)
-document.querySelectorAll(".nav-link").forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
+  // 🧲 CARD HOVER EFFECTS
+  document.addEventListener("mouseover", (e) => {
+    const card = e.target.closest(".card");
+    if (!card) return;
 
-    document.body.style.opacity = "0.2";
+    card.style.transform = "translateY(-10px) scale(1.02)";
+    card.style.transition = "0.3s ease";
+    card.style.boxShadow = "0 20px 40px rgba(0,0,0,0.15)";
+  });
+
+  document.addEventListener("mouseout", (e) => {
+    const card = e.target.closest(".card");
+    if (!card) return;
+
+    card.style.transform = "translateY(0px) scale(1)";
+    card.style.boxShadow = "none";
+  });
+
+  // ⚡ CLICK PULSE EFFECT
+  document.addEventListener("click", (e) => {
+    const card = e.target.closest(".card");
+    if (!card) return;
+
+    card.classList.add("clicked");
 
     setTimeout(() => {
-      document.body.style.opacity = "1";
-    }, 250);
-  });
-});
-
-
-// ⚡ CARD MICRO INTERACTION BOOST
-document.querySelectorAll(".card").forEach(card => {
-
-  card.addEventListener("mouseenter", () => {
-    card.style.filter = "brightness(1.05)";
+      card.classList.remove("clicked");
+    }, 300);
   });
 
-  card.addEventListener("mouseleave", () => {
-    card.style.filter = "brightness(1)";
-  });
+  // 🌌 PAGE LOAD FADE-IN
+  const container = document.querySelector(".feed-container");
 
-  // 💥 CLICK POP EFFECT
-  card.addEventListener("click", () => {
-    card.style.transform = "scale(0.95)";
+  if (container) {
+    container.style.opacity = 0;
+    container.style.transform = "translateY(20px)";
+
     setTimeout(() => {
-      card.style.transform = "scale(1.05)";
-    }, 120);
-  });
+      container.style.transition = "0.6s ease";
+      container.style.opacity = 1;
+      container.style.transform = "translateY(0px)";
+    }, 100);
+  }
 
 });
